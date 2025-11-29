@@ -1,0 +1,12 @@
+.card 
+  .card-body
+    .card-text.pb-3
+      %dl
+    <%- attributes.each do |attribute| -%>
+        %dt <%= attribute.name.humanize %>
+        %dd= @<%= singular_table_name %>.<%= attribute.name %>
+    <%- end -%>
+
+    = link_to 'Back', <%= plural_table_name %>_path, class: "btn btn-primary btn-sm"
+    = link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: "btn btn-secondary btn-sm"
+    = link_to 'Destroy', @<%= singular_table_name %>, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-sm btn-danger"

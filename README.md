@@ -5,7 +5,7 @@
 ```bash
 brew install postgres
 bundle && yarn
-cp .env.sample .env
+cp .env.template .env
 bundle exec rake db:setup
 foreman start -f Procfile.dev
 open http://localhost:3000/
